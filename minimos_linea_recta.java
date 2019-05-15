@@ -10,9 +10,6 @@ public class minimos_linea_recta{
 		n = (int)(Math.random()*limite)+1;
 		System.out.println("n = "+n);
 		/////////////////////////////////////////////////
-
-		Random rx = new Random();
-		Random ry = new Random();
 		Random r = new Random();
 
 		double random,
@@ -50,5 +47,18 @@ public class minimos_linea_recta{
 			+"\nSumatoria X^2="+sumXCuadrado
 			+"\nSumatoria Y="+sumY
 			+"\nSumatoria XY="+sumXY);
+
+		/*SE RESUELVE EL SISTEMA DE ECUACIONES CON DETERMINANTES
+		ALMENOS ESTE TIPO DE PROBLEMA SIEMPRE SERA 2X2*/
+		System.out.println("\n\t\tEcuaciones\n\n"
+			+"1)\t"+n+"a0\t"+sumX+"a1\t=\t"+sumY
+			+"\n2)\t"+sumX+"a0\t"+sumXCuadrado+"a1\t=\t"+sumXY);
+		double det=(n*sumXCuadrado)-(sumX*sumX);
+		double a0 = ((sumY*sumXCuadrado)-(sumX*sumXY))/det;
+        	double a1 = ((n*sumXY)-(sumY*sumX))/det;
+
+        System.out.println("\n"
+        	+"a0="+a0
+        	+"\na1="+a1);
 	}
 }
