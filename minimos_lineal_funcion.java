@@ -38,7 +38,7 @@ public class minimos_lineal_funcion{
 	public static void main(String[] args){
 		System.out.println("\n\t\t\tLineal con funcion\n");
 
-		int n=2,x,y;
+		int n=4,x,y;
 
 		Random r = new Random();
 
