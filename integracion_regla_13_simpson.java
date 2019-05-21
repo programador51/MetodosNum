@@ -31,8 +31,6 @@ public class integracion_regla_13_simpson{
 		double incremento = (double)a;
 		double fa=0,fb=0,multiplicador = 4.0;
 
-		funcion = 3;
-
 		switch(funcion){
 			case 1:
 			/*IMPRIMIR LA FUNCION*/
