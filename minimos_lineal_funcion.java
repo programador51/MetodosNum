@@ -82,6 +82,7 @@ public class minimos_lineal_funcion{
 
 		/*SE CREA LA TABLA DE X,Y DE MANERA ALEATORIA*/
 
+		resultados[] = new double[4];
 		double valores[][] = new double[n][2];
 		System.out.println("\t\t\tX\tY");
 		System.out.println("\t\t\t---------------");
@@ -193,6 +194,7 @@ public class minimos_lineal_funcion{
 			gxAuxiliar = Math.rint(gxAuxiliar * 100000000)/100000000;
 			double gx = a0 + a1*valores[i][0] + gxAuxiliar;
 			gx = Math.rint(gx * 100000000)/100000000;
+			resultados[i] = gx;
 			System.out.println(a0 + " + " + a1 + "("+valores[i][0]+") + "+ a2 + "("+ Math.rint(evaluarFuncion(funcion,valores[i][0])*100000000)/100000000+ ") = " + gx);
 		}
 	}
