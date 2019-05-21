@@ -25,7 +25,7 @@ public class integracion_newton_abiertas{
 		int funcion = (int)(Math.random()*3)+1;
 
 		/*SE GENERAN LOS VALORES DE LA INTEGRAL DEFINIDA Y DE "n"*/
-		int n = (int)(Math.random()*5)+1;
+		int n = (int)(Math.random()*6)+1;
 
 		/*EL LIMITE SUPERIOR DEBE SER MAYOR AL INFERIOR, POR ESO COMO MINIMO, ESTE DEBE VALER 2*/
 		int b = (int)(Math.random()*5)+2;
@@ -48,7 +48,7 @@ public class integracion_newton_abiertas{
 			System.out.println("|[3x"+(char)179+"-10]dx\t n = "+n);
 			System.out.println(a);
 
-			for(int i=1;i<(constantes[n].length)-1;i++){
+			for(int i=1;i<(constantes[n-1].length);i++){
 				//System.out.println("valor = "+constantes[n-1][i]);
 				sum += (constantes[n-1][i])*(3*Math.pow(incremento,3)-10);
 				sum = redondear(sum);
@@ -62,7 +62,7 @@ public class integracion_newton_abiertas{
 			System.out.println("|[xln(x)]\t n = "+n);
 			System.out.println(a);
 
-			for(int i=1;i<(constantes[n].length)-1;i++){
+			for(int i=1;i<(constantes[n-1].length);i++){
 				sum += (constantes[n-1][i])*(incremento*Math.log(incremento));
 				sum = redondear(sum);
 				incremento+=h;
@@ -76,7 +76,7 @@ public class integracion_newton_abiertas{
 			System.out.println("|[1/x]dx\t n = "+n);
 			System.out.println(a);
 
-			for(int i=1;i<(constantes[n].length)-1;i++){
+			for(int i=1;i<<constantes n-1="" class="length"></constantes>;i++){
 				sum += (constantes[n-1][i])*(1/incremento);
 				sum = redondear(sum);
 				incremento+=h;
