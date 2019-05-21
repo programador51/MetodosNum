@@ -22,7 +22,7 @@ public class minimos_linea_recta{
 	}
 
 	public static void main(String[] args){
-		System.out.println("\n\t\tEjercicio de Linea recta\n");
+		System.out.println("\n\t\t\tLinea Recta\n");
 		
 		/*AQUI SE GENERAN DE MANERA ALEATORIA LOS VALORES DE X & Y PARA EL PROBLEMA A RESOLVER*/
 		//n.- ES EL NUMERO DE VALORES DADOS A "X"
@@ -38,6 +38,8 @@ public class minimos_linea_recta{
 		/*SE CREA LA TABLA CON LOS VALORES X & Y*/
 
 		double valores[][] = new double[n][2];
+		System.out.println("\t\t\tX\tY");
+		System.out.println("\t\t\t--------------");
 
 		for(x=0;x<n;x++){
 			for(y=0;y<1;y++){
