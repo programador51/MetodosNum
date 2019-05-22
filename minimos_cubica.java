@@ -149,11 +149,26 @@ public class minimos_cubica{
 			 }
 		   }
 		}
-	 	double x3=a[n-1][n]/a[n-1][n-1];
-	 	double x2=(a[n-2][n]-x3*a[n-2][n-1])/a[n-2][n-2];
-	 	double x1=(a[n-3][n]-x2*a[n-3][n-2]-x3*a[n-3][n-1])/a[n-3][n-3];
-	 	double x0 = (sumY-((sumX*x1)+(sumXCuadrado*x2)+(sumXCubo*x3)))/n;
+	 	double a3=a[n-1][n]/a[n-1][n-1];
+	 	a3 = redondear(a3);
+
+	 	double a2=(a[n-2][n]-a3*a[n-2][n-1])/a[n-2][n-2];
+	 	a2 = redondear(a2);
+
+	 	double a1=(a[n-3][n]-a2*a[n-3][n-2]-a3*a[n-3][n-1])/a[n-3][n-3];
+	 	a1 = redondear(a1);
+
+	 	double a0 = (sumY-((sumX*a1)+(sumXCuadrado*a2)+(sumXCubo*a3)))/n;
+	 	a0 = redondear(a0);
+
 	 	System.out.println("----------------------------------");
-		System.out.println("x0 = "+x0+"\nx1= "+x1+" \nx2= " +x2+" \nx3= " +x3);
+		System.out.println("a0 = "+a0+"\na1= "+a1+" \na2= " +a2+" \na3= " +a3+"\n----------------------------------");
+
+		for(i=0;i<4;i++){
+			resultados[i] = a0*n + a1*valores[i][0] + a2*redondear(Math.pow(valores[i][0],2)) + a3*redondear(Math.pow(valores[i][0],3));
+			resultados[i] = redondear(resultados[i]);
+			System.out.println(a0+"("+n+") + " + a1+"("+valores[i][0]+") + "+ a2+"("+redondear(Math.pow(valores[i][0],2))+") + " + a3+"("+redondear(Math.pow(valores[i][0],3))+") = "+resultados[i]);
+		}
+
 	}
 }
