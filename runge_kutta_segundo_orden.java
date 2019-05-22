@@ -19,9 +19,6 @@ public class runge_kutta_segundo_orden{
 		funcion = (int)(Math.random()*1)+1,
 		calcula = (int)(Math.random()*3)+1;
 
-		calcula = 2;
-		funcion = 3;
-
 		Random r = new Random();
 
 		double max = 3.0,
