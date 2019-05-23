@@ -35,10 +35,6 @@ public class runge_kutta_13_simpson{
 
 		System.out.println("\n\t\tRunge - Kutta de 4to Orden (1/3 de Simpson)\n");
 
-		funcion = 3;
-		h = 0.1;
-		yn = 1.0;
-
 		switch(funcion){
 			case 1:
 			System.out.println("Calcula y1 & y2 con los siguientes datos\n\ty' - y'y - (y + t)"+(char)178+" = 0\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn+"\n");
