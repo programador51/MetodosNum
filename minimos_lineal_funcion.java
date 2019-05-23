@@ -81,8 +81,7 @@ public class minimos_lineal_funcion{
 		}
 
 		/*SE CREA LA TABLA DE X,Y DE MANERA ALEATORIA*/
-
-		resultados[] = new double[4];
+		double resultados[] = new double[4];
 		double valores[][] = new double[n][2];
 		System.out.println("\t\t\tX\tY");
 		System.out.println("\t\t\t---------------");
@@ -92,10 +91,24 @@ public class minimos_lineal_funcion{
 				random = min + r.nextDouble() * (max - min);
 				random = Math.rint(random * 100)/100;
 				valores[x][y] = random;
+				if(x>0){
+					while(valores[x][y]<valores[x-1][0]){
+						random = min + r.nextDouble() * (max - min);
+						random = Math.rint(random * 100)/100;
+						valores[x][y] = random;
+					}
+				}
 			}
 			random = min + r.nextDouble() * (max - min);
 			random = Math.rint(random * 100)/100;
 			valores[x][y] = random;
+			if(x>0){
+				while(valores[x][y]<valores[x-1][1]){
+					random = min + r.nextDouble() * (max - min);
+					random = Math.rint(random * 100)/100;
+					valores[x][y] = random;
+				}
+			}
 			System.out.println("\t\t\t| "+valores[x][y-1]+" | "+valores[x][y]+" |");
 			System.out.println("\t\t\t---------------");
 
