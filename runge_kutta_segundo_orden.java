@@ -16,8 +16,7 @@ public class runge_kutta_segundo_orden{
 	public static void main(String[] args) {
 		/*SE ESCOGE ALEATORIAMENTE LA FUNCION A RESOLVER E IMPRIME EL PROBLEMA PROPUESTO*/
 		int i,
-		funcion = (int)(Math.random()*1)+1,
-		calcula = (int)(Math.random()*3)+1;
+		funcion = (int)(Math.random()*3)+1;
 
 		Random r = new Random();
 
@@ -34,14 +33,14 @@ public class runge_kutta_segundo_orden{
 
 		switch(funcion){
 			case 1:
-			System.out.println("Calcula y"+calcula+" con los siguientes datos\n\ty' = e^t - 3y\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
+			System.out.println("Calcula y1 & y2 con los siguientes datos\n\ty' + 3y - e^-t = 0\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
 			
-			for(i=0;i<calcula;i++){
+			for(i=0;i<2;i++){
 				k1 = h * (redondear(Math.exp(tn))-3*yn);
 				k1 = redondear(k1);
 				System.out.println("k1 = " +k1);
 
-				k2 = h * (redondear(Math.exp(tn+h))-3*(yn+k1));
+				k2 = h * (redondear(Math.exp(-(tn+h)))-3*(yn+k1));
 				k2 = redondear(k2);
 				System.out.println("k2 = " +k2);
 
@@ -54,8 +53,8 @@ public class runge_kutta_segundo_orden{
 			break;
 
 			case 2:
-			System.out.println("Calcula y"+calcula+" con los siguientes datos\n\ty' = 2ty - 1\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
-			for(i=0;i<calcula;i++){
+			System.out.println("Calcula y1 & y2 con los siguientes datos\n\ty' - 2ty + 1 = 0\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
+			for(i=0;i<2;i++){
 				k1 = h * ((2*tn*yn)-1);
 				k1 = redondear(k1);
 				System.out.println("k1 = " +k1);
@@ -73,8 +72,8 @@ public class runge_kutta_segundo_orden{
 			break;
 
 			case 3:
-			System.out.println("Calcula y"+calcula+" con los siguientes datos\n\ty' = (y+1)(t+1)cos(t"+(char)178+"+2t)\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
-			for (i=0;i<calcula;i++){
+			System.out.println("Calcula y1 & y2 con los siguientes datos\n\ty'/[(y+1)(t+1)cos(t"+(char)178+"+2t)] = 0\ty0 = "+yn+"\th = "+h+"\tt0 = "+tn);
+			for (i=0;i<2;i++){
 				k1 = h * ((yn+1)*(tn+1)*redondear(Math.cos(redondear(Math.pow(tn,2)+(2*tn)))));
 				k1 = redondear(k1);
 				System.out.println("k1 = " +k1);
