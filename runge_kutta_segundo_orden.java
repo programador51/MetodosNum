@@ -29,6 +29,8 @@ public class runge_kutta_segundo_orden{
 		k2 = 0.0,
 		y = 0.0;
 
+		double resultados[] = new double[2];
+
 		System.out.println("\n\t\tRunge - Kutta de 2do Orden\n");
 
 		switch(funcion){
@@ -46,6 +48,8 @@ public class runge_kutta_segundo_orden{
 
 				y = redondear(calcularY(k1,k2,yn));
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
+
+				resultados[i] = y;
 
 				yn = y;
 				tn = tn + h;
@@ -66,6 +70,8 @@ public class runge_kutta_segundo_orden{
 				y = redondear(calcularY(k1,k2,yn));
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
 
+				resultados[i] = y;
+
 				yn = y;
 				tn = tn + h;
 			}
@@ -82,9 +88,10 @@ public class runge_kutta_segundo_orden{
 				k2 = redondear(k2);
 				System.out.println("k2 = " +k2);
 
-
 				y = redondear(calcularY(k1,k2,yn));
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
+
+				resultados[i] = y;
 
 				yn = y;
 				tn = tn + h;
