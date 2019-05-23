@@ -43,8 +43,18 @@ public class minimos_cuadratica{
 		for(x=0;x<n;x++){
 			for(y=0;y<1;y++){
 				valores[x][y] = numeroRandom();
+				if(x>0){
+					while(valores[x][y]<valores[x-1][0]){
+						valores[x][y] = numeroRandom();
+					}
+				}
 			}
 			valores[x][y] = numeroRandom();
+			if(x>0){
+				while(valores[x][y]<valores[x-1][1]){
+					valores[x][y] = numeroRandom();
+				}
+			}
 			System.out.println("\t\t\t| "+valores[x][y-1]+" | "+valores[x][y]+" |");
 			System.out.println("\t\t\t--------------");
 			//SE OBTIENE LA SUMATORIA DE LA MULTIPLICACION DE XY
