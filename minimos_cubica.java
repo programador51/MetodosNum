@@ -168,7 +168,7 @@ public class minimos_cubica{
 	 	double a1=(a[n-3][n]-a2*a[n-3][n-2]-a3*a[n-3][n-1])/a[n-3][n-3];
 	 	a1 = redondear(a1);
 
-	 	double a0 = (sumY-((sumX*a1)+(sumXCuadrado*a2)+(sumXCubo*a3)))/n;
+	 	double a0 = (sumY - (a1*valores[0][0]+a2*redondear(Math.pow(valores[0][0],2))+a3*redondear(Math.pow(valores[0][0],3))))/n;
 	 	a0 = redondear(a0);
 
 	 	System.out.println("----------------------------------");
