@@ -22,6 +22,8 @@ public class euler_adelante{
 		tn = 0.0,
 		y = 0;
 
+		double resultados[] = new double[2];
+
 		System.out.println("\n\t\tEuler Hacia Adelante\n");
 		switch(funcion){
 			case 1:
@@ -30,6 +32,7 @@ public class euler_adelante{
 				y = yn + h*(((5*yn*tn)-1)/3);
 				y = redondear(y);
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
+				resultados[i] = y;
 				yn = y;
 				tn = tn + h;
 			}
@@ -41,6 +44,7 @@ public class euler_adelante{
 				y = yn + h*(-1/redondear(Math.exp(3*tn)));
 				y = redondear(y);
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
+				resultados[i] = y;
 				yn = y;
 				tn = tn + h;
 			}
@@ -53,6 +57,7 @@ public class euler_adelante{
 				y = yn + h*(redondear(Math.pow(tn,2))+redondear(Math.pow(tn,2))*redondear(Math.pow(yn,2)));
 				y = redondear(y);
 				System.out.println("y"+(i+1)+" = "+y+"\n--------------------");
+				resultados[i] = y;
 				yn = y;
 				tn = tn + h;
 			}
