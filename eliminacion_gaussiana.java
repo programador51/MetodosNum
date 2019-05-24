@@ -64,8 +64,6 @@ public class eliminacion_gaussiana{
 	 	x1 = redondear(x1);
 	 	resultados[2] = x1;
 
-
-
-	 	System.out.println("\nx1= "+resultados[0]+" \nx2= " +resultados[1]+" \nx3= " +resultados[0]);
+	 	System.out.println("\nx1= "+resultados[2]+" \nx2= " +resultados[1]+" \nx3= " +resultados[0]);
 	}
 }
